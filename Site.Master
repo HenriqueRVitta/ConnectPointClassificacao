@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Classificacao.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="pt">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>Connetpoint</title>
+    <link href="Content/Site.css" rel="stylesheet" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/icone.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script type="text/ecmascript" language ="javascript">
+        window.history.forward();
+    </script>
+
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return true">
+    <form id="Form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <table align="center" class="auto-style4">
+            <tr>
+                <td class="auto-style1"></td>
+                <td class="auto-style2">
+                    <asp:Panel ID="PnlMenuA" runat="server">
+                        <nav>
+                            <ul class="menu">
+                                <!--
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="collapse" runat="server" href="~/prg01.aspx"><i class="fa fa-archive"></i>Classifica Texto</a>
+                                </li>
+                                -->
+                                <li><a class="dropdown-toggle" data-toggle="collapse" runat="server" href="https://app.connectpoint.com.br/Dashboard/Index"><i class="fa fa-fw fa-search"></i>APP Connectpoint</a>
+                                </li>
+                                <li><a class="dropdown-toggle" data-toggle="collapse" runat="server" href="~/CarregarPlanilhaExcel.aspx"><i class="fa fa-fw fa-search"></i>Carregar Planilha Excel</a>
+                                </li>
+                                <li><a class="dropdown-toggle" data-toggle="collapse" runat="server" href="~/CadastrarPalavras.aspx"><i class="fa fa-fw fa-cogs"></i>Cadastrar Palavras para API</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </asp:Panel> 
+                </td>
+            </tr>
+        </table>
+        <table align="center" class="auto-style5">
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+        <footer>
+            <table align="center" class="auto-style6">
+                <tr class="float-left">
+                    <td style="font-size:12px;" class="auto-style7">
+                    <img src="./imagens/rodape.jpg">
+                    &copy; <%: DateTime.Now.Year %> - Connectpoint
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </form>
+</body>
+</html>
