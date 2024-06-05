@@ -166,6 +166,7 @@
     <Content Include="About.aspx" />
     <Content Include="CadastrarPalavras.aspx" />
     <Content Include="CarregarPlanilhaExcel.aspx" />
+    <Content Include="ClassificaTexto.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -187,8 +188,10 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="icone.ico" />
+    <Content Include="imagens\buscar.png" />
     <Content Include="imagens\cabecalho.png" />
     <Content Include="imagens\excluir.png" />
+    <Content Include="imagens\gerar.png" />
     <Content Include="imagens\gravar.png" />
     <Content Include="imagens\limpar.png" />
     <Content Include="imagens\rodape.jpg" />
@@ -284,6 +287,13 @@
     </Compile>
     <Compile Include="CarregarPlanilhaExcel.aspx.designer.cs">
       <DependentUpon>CarregarPlanilhaExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassificaTexto.aspx.cs">
+      <DependentUpon>ClassificaTexto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassificaTexto.aspx.designer.cs">
+      <DependentUpon>ClassificaTexto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
