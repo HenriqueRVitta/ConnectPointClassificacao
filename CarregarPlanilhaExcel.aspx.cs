@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -24,6 +26,13 @@ namespace Classificacao
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            /* Forçar o Servidor na Formatação de Data pt-BR */
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR", true); 
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR", true);
+
+            // Obtenho o DateTime de Brasília
+            HoraAtualView.Text = HrBrasilia().ToString();
 
         }
 
@@ -54,6 +63,11 @@ namespace Classificacao
         }
         protected void BtnGravar_Click(object sender, ImageClickEventArgs e)
         {
+
+            /* Forçar o Servidor na Formatação de Data pt-BR */
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR", true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR", true);
+
             int modalidade = 0;
             //campos[0] = Número do Licitacao   
             //campos[1] = Código              
@@ -80,6 +94,9 @@ namespace Classificacao
 
             string filename = @"./carga/carga.xlsx";
             string arquivo = Server.MapPath(@filename);
+
+            // Obtenho o DateTime de Brasília
+            HoraAtualView.Text = HrBrasilia().ToString();
 
             int registro = 0;
             int conta = 0;
@@ -206,7 +223,7 @@ namespace Classificacao
 
                                     DateTime data;
                                     string Data_Abertura = "";
-
+                                    //var culture = new CultureInfo("pt-BR", false);
                                     if (campos[15].ToString() != "Não informado")
                                     {
                                         try
@@ -326,6 +343,13 @@ namespace Classificacao
                     }
                 }
             }
+        }
+
+        public DateTime HrBrasilia()
+        {
+            DateTime dateTime = DateTime.UtcNow;
+            TimeZoneInfo hrBrasilia = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
+            return TimeZoneInfo.ConvertTimeFromUtc(dateTime, hrBrasilia);
         }
 
     }

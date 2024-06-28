@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CarregarPlanilhaExcel.aspx.cs" Inherits="Classificacao.CarregarPlanilhaExcel" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <asp:label runat="server" ID="HoraAtualView" text="" style="font-size: 16px; color:red;"></asp:label>
         <div>
             <table align="center">
                 <tr>
