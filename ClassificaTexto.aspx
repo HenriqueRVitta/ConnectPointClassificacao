@@ -156,11 +156,11 @@
                 <tr>
                     <td style="color:#3431FF">Data Início</td>
                     <td>
-                        <asp:TextBox ID="TxtDataIni" runat="server" Width="135px" Height="25px" TextMode="Date" required="required"></asp:TextBox>
+                        <asp:TextBox ID="TxtDataIni" runat="server" Width="135px" Height="25px" TextMode="Date"></asp:TextBox>
                     </td>
                     <td style="color:#3431FF">Data Término</td>
                     <td>
-                        <asp:TextBox ID="TxtDataFim" runat="server" Width="135px" Height="25px" TextMode="Date" required="required"></asp:TextBox>
+                        <asp:TextBox ID="TxtDataFim" runat="server" Width="135px" Height="25px" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
